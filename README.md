@@ -1,8 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Netflix-Clone
 
-## Available Scripts
-
-In the project directory, you can run:
+This project is built using React, TMDB api, and Firebase
 
 ### `npm start`
 
