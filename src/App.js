@@ -1,14 +1,26 @@
 import React from "react";
 import Row from "./Row";
 import { requestEndPoints } from "./endpoints";
+import Banner from './Banner'
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Netflix Clone</h1>
-      <Row title="NETFLIX ORIGINALS" fetchUrl={requestEndPoints.fetchNetflixOriginals} />
+    <div className="app">
+      {/* Navbar */}
+      <Banner />
+      <Row
+        title="NETFLIX ORIGINALS"
+        fetchUrl={requestEndPoints.fetchNetflixOriginals}
+        isLargeRow
+      />
       <Row title="Trending Now" fetchUrl={requestEndPoints.fetchTrending} />
+      <Row title="Top Rated" fetchUrl={requestEndPoints.fetchTopRated} />
+      <Row title="Action Movies" fetchUrl={requestEndPoints.fetchActionMovies} />
+      <Row title="Comedy Movies" fetchUrl={requestEndPoints.fetchComedyMovies} />
+      <Row title="Horror Movies" fetchUrl={requestEndPoints.fetchHorrorMovies} />
+      <Row title="Romance Movies" fetchUrl={requestEndPoints.fetchRomanceMovies} />
+      <Row title="Documentaries" fetchUrl={requestEndPoints.fetchDocumentaries} />
     </div>
   );
 }
