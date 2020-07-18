@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import instance from "./api";
 import { requestEndPoints } from "./endpoints";
+import "./banner.css";
 
 const Banner = () => {
   const [movie, setMovie] = useState([]);
@@ -19,6 +20,12 @@ const Banner = () => {
     fetchData();
   }, []);
 
+  const truncate = (characters, limit) => {
+    return characters?.length > limit
+      ? characters.substr(0, limit - 1) + "..."
+      : characters;
+  };
+
   return (
     <header
       className="banner"
@@ -29,12 +36,17 @@ const Banner = () => {
       }}
     >
       <div className="banner__contents">
-        <h1>{movie?.title || movie?.name || movie?.original_name}</h1>
+        <h1 className="banner__title">
+          {movie?.title || movie?.name || movie?.original_name}
+        </h1>
         <div className="banner__buttons">
-          <button className="banner_button">Play</button>
-          <button className="banner_button">My List</button>
+          <button className="banner__button">Play</button>
+          <button className="banner__button">My List</button>
         </div>
+        <h1 className="banner__description">{truncate(movie?.overview, 150)}</h1>
       </div>
+
+      <div className="banner__fadeBottom"></div>
     </header>
   );
 };

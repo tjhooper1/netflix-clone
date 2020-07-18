@@ -2,12 +2,13 @@ import React from "react";
 import Row from "./Row";
 import { requestEndPoints } from "./endpoints";
 import Banner from './Banner'
+import Navbar from './Navbar'
 import "./App.css";
 
-function App() {
+const App = () => {
   return (
     <div className="app">
-      {/* Navbar */}
+      <Navbar />
       <Banner />
       <Row
         title="NETFLIX ORIGINALS"
